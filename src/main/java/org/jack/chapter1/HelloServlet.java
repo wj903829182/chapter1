@@ -1,7 +1,6 @@
 package org.jack.chapter1;
 
 
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,17 +18,14 @@ import java.util.Date;
 public class HelloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.print("helllllllllllllllllllllll");
-
-        doPost(req,resp);
-
+        doPost(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String currentTime = dateFormat.format(new Date());
-        request.setAttribute("currentTime",currentTime);
-        request.getRequestDispatcher("/WEB-INF/jsp/hello.jsp").forward(request,response);
+        request.setAttribute("currentTime", currentTime);
+        request.getRequestDispatcher("/WEB-INF/jsp/hello.jsp").forward(request, response);
     }
 }
